@@ -1,16 +1,23 @@
+<!-- Dokumentets type og språkspesifikasjon -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta-informasjon, inkludert tegnsett og skjermstørrelsesjustering -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tittelen på dokumentet som vises i nettlesertabben -->
     <title>Julequiz</title>
+
+    <!-- Kobler til ekstern CSS-fil for styling -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Overskrift for Julequizen -->
     <h1>Julequiz</h1>
-    
 
+    <!-- Container (div-element) for hele quizen -->
     <div id="quizForm">
         <!-- Spørsmål 1 -->
         <p>Hvilken brus bruker Julenissen i sine reklamer?</p>
@@ -36,54 +43,16 @@
         <input type="radio" name="q4" value="feil"> Sirius
         <input type="radio" name="q4" value="feil"> Canopus
 
-        <!-- Submit-knapp -->
+        <!-- Knapp for å sjekke svar, utløser JavaScript-funksjonen checkAnswers() -->
         <br>
         <input type="button" value="Sjekk svar" onclick="checkAnswers()">
     </div>
 
+    <!-- Melding som viser brukerens resultat -->
     <p id="scoreMessage"></p>
+
+    <!-- Container (div-element) som viser riktige svar, skjules inntil brukeren sjekker svar -->
     <p id="correctAnswers" style="display: none;"></p>
-
-    <script>
-        function checkAnswers() {
-            const form = document.getElementById("quizForm");
-            const scoreMessage = document.getElementById("scoreMessage");
-            const correctAnswersDiv = document.getElementById("correctAnswers");
-
-            let score = 0;
-            let correctAnswers = [];
-
-            for (let i = 1; i <= 4; i++) {
-                const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
-
-                if (selectedAnswer) {
-                    const userAnswer = selectedAnswer.value;
-
-                    if (userAnswer === "riktig") {
-                        score++;
-                    } else {
-                        correctAnswers.push(`Spørsmål ${i}: Riktig svar er ${selectedAnswer.nextSibling.nodeValue.trim()}`);
-                    }
-                }
-            }
-
-            scoreMessage.textContent = `Du fikk ${score} av 4 riktige svar.`;
-
-            if (correctAnswers.length > 0) {
-                correctAnswersDiv.innerHTML = `<p>Riktige svar:</p><ul><li>Spørsmål 1: Cola</li><li>Spørsmål 2: Norge</li><li>Spørsmål 3: 9</li><li>Spørsmål 4: Betlehemsstjernen</li></ul>`;
-                correctAnswersDiv.style.display = "block";
-            } else {
-                correctAnswersDiv.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
-
-
-
-
-
-
-

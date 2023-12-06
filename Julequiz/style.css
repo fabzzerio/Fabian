@@ -1,0 +1,78 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Endret bakgrunnsfarge til hvit */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column; /* Justert for å plassere elementene i kolonne */
+}
+
+h1 {
+    color: #006400; /* Endret fargen til mørk grønn (#006400) */
+}
+
+#quizForm {
+    background-color: #fff; /* Endret bakgrunnsfarge til hvit */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin: 20px 0;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="button"] {
+    background-color: #8B0000; /* Endret fargen til mørk rød (#8B0000) */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Lagt til margin-top for å justere plassering */
+}
+
+input[type="button"]:hover {
+    background-color: #800000; /* Endret hover-fargen til en mørkere rød (#800000) */
+}
+
+#scoreMessage {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #8B0000; /* Endret fargen til mørk rød (#8B0000) */
+}
+
+#correctAnswers {
+    margin-top: 10px;
+    color: #3498db; /* Lagt til en lett lyseblå farge på fasiten (#3498db) */
+}
+
+/* Ekstra juledekorasjoner */
+body::before,
+body::after {
+    content: '\2605'; /* Fylt stjerne-ikon */
+    font-size: 60px;
+    color: #006400; /* Endret fargen til mørk grønn (#006400) */
+    position: fixed;
+    z-index: -1;
+}
+
+body::before {
+    top: 50px;
+    right: 50px;
+}
+
+body::after {
+    bottom: 50px;
+    left: 50px;
+}
+
+
